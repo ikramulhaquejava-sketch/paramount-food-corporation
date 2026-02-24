@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Contact Us</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+<h2>Paramount Food Corp.</h2>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="products.html">Products</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+
+<section>
+<div class="container contact-box">
+<h2 class="title">Contact Us</h2>
+
+<p><strong>Address:</strong> Delhi, India</p>
+<p><strong>Email:</strong> info@paramountfood.com</p>
+<p><strong>Phone:</strong> +91 XXXXX XXXXX</p>
+
+<br>
+
+<form onsubmit="sendMsg(event)">
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Email" required>
+<textarea rows="5" placeholder="Message"></textarea>
+<button>Send Message</button>
+</form>
+
+</div>
+</section>
+
+<footer>© Paramount Food Corporation</footer>
+
+<script>
+function sendMsg(e){
+e.preventDefault();
+alert("Message sent successfully!");
+}
+</script>
+
+</body>
+</html>
