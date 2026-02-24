@@ -6,202 +6,225 @@
 <title>Paramount Food Corporation</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root{
+    --primary:#8B0000;
+    --accent:#FFD700;
+    --light:#f4f4f4;
+    --dark:#222;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
-    line-height: 1.6;
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    line-height:1.6;
+    color:#333;
 }
 
 /* NAVBAR */
-nav {
-    background: #8B0000;
-    color: white;
-    padding: 15px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+nav{
+    background:var(--primary);
+    color:white;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
-nav h1 {
-    letter-spacing: 1px;
+nav h1{
+    font-size:22px;
+    letter-spacing:1px;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
+nav ul{
+    list-style:none;
+    display:flex;
 }
 
-nav ul li {
-    margin-left: 25px;
+nav ul li{
+    margin-left:25px;
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
 }
 
-nav ul li a:hover {
-    color: #FFD700;
+nav ul li a:hover{
+    color:var(--accent);
 }
 
 /* HERO */
-.hero {
-    height: 85vh;
-    background: url("https://images.unsplash.com/photo-1606787366850-de6330128bfc") center/cover no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
+.hero{
+    height:85vh;
+    background:url("https://images.unsplash.com/photo-1606787366850-de6330128bfc") center/cover no-repeat;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
 }
 
-.hero h2 {
-    font-size: 50px;
-    background: rgba(0,0,0,0.5);
-    padding: 20px;
+.hero h2{
+    font-size:48px;
+    background:rgba(0,0,0,0.5);
+    padding:20px;
+    border-radius:6px;
 }
 
 /* SECTIONS */
-section {
-    padding: 60px 40px;
+section{
+    padding:60px 40px;
 }
 
-h2.section-title {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #8B0000;
+.section-title{
+    text-align:center;
+    color:var(--primary);
+    margin-bottom:30px;
 }
 
 /* ABOUT */
-.about {
-    max-width: 900px;
-    margin: auto;
-    text-align: center;
-    font-size: 18px;
+.about{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+    font-size:18px;
+}
+
+/* FEATURES */
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    text-align:center;
+}
+
+.feature-box{
+    background:var(--light);
+    padding:25px;
+    border-radius:8px;
 }
 
 /* PRODUCTS */
-.products-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
 }
 
-.product-card {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    overflow: hidden;
-    transition: 0.3s;
+.card{
+    background:white;
+    border-radius:10px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+    overflow:hidden;
+    transition:.3s;
 }
 
-.product-card:hover {
-    transform: translateY(-5px);
+.card:hover{
+    transform:translateY(-5px);
 }
 
-.product-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
 }
 
-.product-card h3 {
-    padding: 15px;
-    color: #8B0000;
+.card h3{
+    padding:15px;
+    color:var(--primary);
 }
 
-.product-card p {
-    padding: 0 15px 20px;
+.card p{
+    padding:0 15px 20px;
 }
 
 /* CONTACT */
-.contact {
-    background: #f4f4f4;
+.contact{
+    background:var(--light);
 }
 
-form {
-    max-width: 600px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
+form{
+    max-width:600px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
 }
 
-input, textarea {
-    padding: 12px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+input,textarea{
+    padding:12px;
+    margin-bottom:15px;
+    border-radius:5px;
+    border:1px solid #ccc;
+    font-size:16px;
 }
 
-button {
-    padding: 12px;
-    border: none;
-    background: #8B0000;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
+button{
+    padding:12px;
+    background:var(--primary);
+    color:white;
+    border:none;
+    font-size:16px;
+    cursor:pointer;
 }
 
-button:hover {
-    background: #a80000;
+button:hover{
+    background:#a80000;
 }
 
 /* FOOTER */
-footer {
-    background: #8B0000;
-    color: white;
-    text-align: center;
-    padding: 15px;
+footer{
+    background:var(--primary);
+    color:white;
+    text-align:center;
+    padding:15px;
+    font-size:14px;
 }
 
-/* MOBILE OPTIMIZATION */
-@media(max-width:768px) {
+/* MOBILE */
+@media(max-width:768px){
 
-    nav {
-        flex-direction: column;
-        text-align: center;
-    }
+nav{
+    flex-direction:column;
+}
 
-    nav ul {
-        flex-direction: column;
-        margin-top: 10px;
-    }
+nav ul{
+    flex-direction:column;
+    margin-top:10px;
+}
 
-    nav ul li {
-        margin: 10px 0;
-    }
+nav ul li{
+    margin:8px 0;
+}
 
-    .hero {
-        height: 60vh;
-        padding: 20px;
-    }
+.hero{
+    height:60vh;
+    padding:20px;
+}
 
-    .hero h2 {
-        font-size: 26px;
-        padding: 15px;
-    }
+.hero h2{
+    font-size:26px;
+}
 
-    section {
-        padding: 40px 20px;
-    }
+section{
+    padding:40px 20px;
+}
 
-    .about {
-        font-size: 16px;
-    }
-
-    .product-card img {
-        height: 160px;
-    }
-
-    form {
-        width: 100%;
-    }
+.about{
+    font-size:16px;
+}
 }
 </style>
 </head>
@@ -212,6 +235,7 @@ footer {
 <nav>
     <h1>Paramount Food Corp.</h1>
     <ul>
+        <li><a href="#">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#products">Products</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -220,54 +244,69 @@ footer {
 
 <!-- HERO -->
 <div class="hero">
-    <h2>Fresh • Quality • Trusted Food Products</h2>
+    <h2>Premium Quality Food Products You Can Trust</h2>
 </div>
 
 <!-- ABOUT -->
 <section id="about">
     <h2 class="section-title">About Us</h2>
     <div class="about">
-        <p>
-            Paramount Food Corporation delivers premium-quality food products
-            with unmatched freshness and taste. We specialize in sourcing,
-            processing, and supplying hygienic and nutritious food items
-            that meet global standards.
-        </p>
-        <br>
-        <p>
-            Our mission is to provide safe, healthy, and high-quality food
-            while maintaining trust and excellence in every product.
-        </p>
+        Paramount Food Corporation is dedicated to delivering hygienic,
+        high-quality and nutritious food products. We specialize in sourcing,
+        processing and supplying premium food items that meet international
+        safety and quality standards.
+        <br><br>
+        Our commitment to quality, hygiene, and customer satisfaction makes us
+        a trusted partner for domestic and global markets.
+    </div>
+</section>
+
+<!-- FEATURES -->
+<section>
+    <div class="features">
+        <div class="feature-box">
+            <h3>✔ Quality Assured</h3>
+            <p>Strict quality control & hygienic processing standards.</p>
+        </div>
+        <div class="feature-box">
+            <h3>✔ Global Standards</h3>
+            <p>Products suitable for domestic & export markets.</p>
+        </div>
+        <div class="feature-box">
+            <h3>✔ Fresh & Natural</h3>
+            <p>Sourced directly from trusted farms & suppliers.</p>
+        </div>
     </div>
 </section>
 
 <!-- PRODUCTS -->
 <section id="products">
     <h2 class="section-title">Our Products</h2>
-    <div class="products-container">
 
-        <div class="product-card">
+    <div class="products">
+
+        <div class="card">
             <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c">
             <h3>Spices & Seasonings</h3>
-            <p>Authentic aroma and premium quality spices.</p>
+            <p>Authentic aroma and rich flavors for perfect cooking.</p>
         </div>
 
-        <div class="product-card">
+        <div class="card">
             <img src="https://wallpaperaccess.com/full/4002073.jpg">
             <h3>Dry Fruits</h3>
-            <p>Fresh, nutritious and carefully selected dry fruits.</p>
+            <p>Premium quality dry fruits packed with nutrition.</p>
         </div>
 
-        <div class="product-card">
+        <div class="card">
             <img src="https://5.imimg.com/data5/SELLER/Default/2022/4/BF/LV/EN/24433134/pulses-jpg-1000x1000.jpg">
             <h3>Grains & Pulses</h3>
             <p>Wholesome grains processed with hygiene & care.</p>
         </div>
 
-        <div class="product-card">
+        <div class="card">
             <img src="https://5.imimg.com/data5/IOS/Default/2022/1/AP/BX/JT/61476317/product-jpeg-500x500.png">
             <h3>Packaged Foods</h3>
-            <p>Healthy and convenient ready-to-use food products.</p>
+            <p>Healthy & convenient ready-to-use food solutions.</p>
         </div>
 
     </div>
@@ -277,24 +316,23 @@ footer {
 <section id="contact" class="contact">
     <h2 class="section-title">Contact Us</h2>
 
-    <form onsubmit="submitForm(event)">
+    <form onsubmit="sendMessage(event)">
         <input type="text" placeholder="Your Name" required>
         <input type="email" placeholder="Email Address" required>
         <input type="tel" placeholder="Phone Number">
         <textarea rows="5" placeholder="Your Message"></textarea>
         <button type="submit">Send Message</button>
     </form>
-
 </section>
 
 <footer>
-    © 2026 Paramount Food Corporation | All Rights Reserved
+© 2026 Paramount Food Corporation • All Rights Reserved
 </footer>
 
 <script>
-function submitForm(e){
+function sendMessage(e){
     e.preventDefault();
-    alert("Thank you! Your message has been sent.");
+    alert("Thank you! We will contact you soon.");
 }
 </script>
 
