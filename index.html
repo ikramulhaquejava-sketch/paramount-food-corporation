@@ -160,10 +160,47 @@ footer {
     padding: 15px;
 }
 
-/* MOBILE */
+/* MOBILE OPTIMIZATION */
 @media(max-width:768px) {
+
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .hero {
+        height: 60vh;
+        padding: 20px;
+    }
+
     .hero h2 {
-        font-size: 30px;
+        font-size: 26px;
+        padding: 15px;
+    }
+
+    section {
+        padding: 40px 20px;
+    }
+
+    .about {
+        font-size: 16px;
+    }
+
+    .product-card img {
+        height: 160px;
+    }
+
+    form {
+        width: 100%;
     }
 }
 </style>
@@ -186,20 +223,20 @@ footer {
     <h2>Fresh • Quality • Trusted Food Products</h2>
 </div>
 
-<!-- ABOUT US -->
+<!-- ABOUT -->
 <section id="about">
     <h2 class="section-title">About Us</h2>
     <div class="about">
         <p>
-            Paramount Food Corporation is committed to delivering premium-quality
-            food products with unmatched freshness and taste. We specialize in
-            sourcing, processing, and supplying hygienic and nutritious food items
-            to meet global standards.
+            Paramount Food Corporation delivers premium-quality food products
+            with unmatched freshness and taste. We specialize in sourcing,
+            processing, and supplying hygienic and nutritious food items
+            that meet global standards.
         </p>
         <br>
         <p>
-            Our mission is to provide safe, healthy, and high-quality food while
-            maintaining trust and excellence in every product we deliver.
+            Our mission is to provide safe, healthy, and high-quality food
+            while maintaining trust and excellence in every product.
         </p>
     </div>
 </section>
@@ -212,25 +249,25 @@ footer {
         <div class="product-card">
             <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c">
             <h3>Spices & Seasonings</h3>
-            <p>Rich aroma and authentic flavors sourced from the finest farms.</p>
+            <p>Authentic aroma and premium quality spices.</p>
         </div>
 
         <div class="product-card">
             <img src="https://wallpaperaccess.com/full/4002073.jpg">
             <h3>Dry Fruits</h3>
-            <p>Premium quality dry fruits packed with nutrition and freshness.</p>
+            <p>Fresh, nutritious and carefully selected dry fruits.</p>
         </div>
 
         <div class="product-card">
             <img src="https://5.imimg.com/data5/SELLER/Default/2022/4/BF/LV/EN/24433134/pulses-jpg-1000x1000.jpg">
             <h3>Grains & Pulses</h3>
-            <p>Wholesome and hygienically processed grains for daily needs.</p>
+            <p>Wholesome grains processed with hygiene & care.</p>
         </div>
 
         <div class="product-card">
             <img src="https://5.imimg.com/data5/IOS/Default/2022/1/AP/BX/JT/61476317/product-jpeg-500x500.png">
             <h3>Packaged Foods</h3>
-            <p>Convenient and healthy ready-to-use food solutions.</p>
+            <p>Healthy and convenient ready-to-use food products.</p>
         </div>
 
     </div>
