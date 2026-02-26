@@ -1,36 +1,312 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Paramount Food Corporation</title>
-<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paramount Meat Corporation | Moradabad</title>
+
+<style>
+
+:root{
+--primary:#7a0000;
+--dark:#111;
+--light:#f4f4f4;
+--accent:#d4af37;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: 'Segoe UI', sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:var(--dark);
+color:white;
+line-height:1.6;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+position:fixed;
+width:100%;
+background:rgba(0,0,0,0.85);
+z-index:1000;
+}
+
+nav h2{
+color:var(--accent);
+letter-spacing:1px;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+}
+
+nav ul li{
+margin-left:25px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:white;
+font-weight:500;
+transition:0.3s;
+}
+
+nav ul li a:hover{
+color:var(--accent);
+}
+
+/* HERO SECTION */
+.hero{
+height:100vh;
+background:url("https://images.unsplash.com/photo-1604908177522-4299c3bfe6e1") center/cover no-repeat;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+position:relative;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+}
+
+.hero-content{
+position:relative;
+z-index:1;
+animation:fadeIn 2s ease-in-out;
+}
+
+.hero h1{
+font-size:55px;
+color:var(--accent);
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:20px;
+max-width:800px;
+margin:auto;
+margin-bottom:30px;
+}
+
+.btn{
+padding:14px 28px;
+background:var(--primary);
+color:white;
+text-decoration:none;
+border-radius:4px;
+margin:10px;
+transition:0.3s;
+display:inline-block;
+}
+
+.btn:hover{
+background:var(--accent);
+color:black;
+}
+
+/* SECTION */
+section{
+padding:80px 60px;
+}
+
+.title{
+text-align:center;
+color:var(--accent);
+margin-bottom:40px;
+font-size:32px;
+}
+
+/* ABOUT */
+.about{
+max-width:1000px;
+margin:auto;
+text-align:center;
+font-size:18px;
+animation:fadeUp 2s ease;
+}
+
+/* FACTORY SECTION */
+.factory{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+}
+
+.factory img{
+width:100%;
+border-radius:8px;
+}
+
+.factory-text{
+font-size:18px;
+}
+
+/* STATS */
+.stats{
+display:flex;
+justify-content:space-around;
+text-align:center;
+margin-top:50px;
+}
+
+.stats div h3{
+font-size:40px;
+color:var(--accent);
+}
+
+/* FOOTER */
+footer{
+background:#000;
+text-align:center;
+padding:20px;
+color:#aaa;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(-30px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(40px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+nav{
+flex-direction:column;
+padding:20px;
+}
+
+nav ul{
+flex-direction:column;
+margin-top:10px;
+}
+
+.hero h1{
+font-size:32px;
+}
+
+section{
+padding:60px 20px;
+}
+
+.factory{
+grid-template-columns:1fr;
+}
+
+.stats{
+flex-direction:column;
+gap:20px;
+}
+
+}
+
+</style>
 </head>
+
 <body>
 
 <nav>
-<h2>Paramount Food Corp.</h2>
+<h2>Paramount Meat Corp.</h2>
 <ul>
-<li><a href="index.html">Home</a></li>
+<li><a href="#">Home</a></li>
 <li><a href="about.html">About</a></li>
 <li><a href="products.html">Products</a></li>
 <li><a href="contact.html">Contact</a></li>
 </ul>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
-<h1>Premium Quality Food Products</h1>
+<div class="hero-content">
+<h1>Premium Quality Meat Processing & Export</h1>
+<p>
+Established in 2025 in Moradabad, Paramount Meat Corporation is committed to delivering hygienic,
+high-quality processed meat products that meet international food safety standards.
+</p>
+<a href="contact.html" class="btn">Get In Touch</a>
+<a href="products.html" class="btn">View Products</a>
+</div>
 </div>
 
+<!-- ABOUT -->
 <section>
-<div class="container">
-<h2 class="title">Welcome</h2>
-<p>
-Paramount Food Corporation delivers hygienic, high-quality food products
-for domestic and global markets. Our commitment to freshness, safety,
-and international standards makes us a trusted partner worldwide.
-</p>
+<h2 class="title">About Paramount Meat Corporation</h2>
+<div class="about">
+Founded in 2025, Paramount Meat Corporation is a modern meat processing company
+located in Moradabad, India. Our facility is designed with advanced hygienic
+processing systems, cold storage infrastructure, and strict quality control standards.
+<br><br>
+We are committed to providing safe, fresh and premium meat products to domestic
+and international markets. Our vision is to become a globally trusted meat
+export brand through integrity, quality and excellence.
 </div>
 </section>
 
-<footer>© Paramount Food Corporation</footer>
+<!-- FACTORY -->
+<section>
+<h2 class="title">Our Modern Processing Facility</h2>
+
+<div class="factory">
+<img src="https://images.unsplash.com/photo-1588167056547-c183313da47e">
+<div class="factory-text">
+Our Moradabad-based factory follows strict hygiene and international food safety
+standards. Equipped with modern machinery and cold chain systems, we ensure
+freshness, quality and compliance with export regulations.
+<br><br>
+We maintain complete traceability, quality checks and professional packaging
+to guarantee customer satisfaction worldwide.
+</div>
+</div>
+
+<div class="stats">
+<div>
+<h3>2025</h3>
+<p>Founded</p>
+</div>
+<div>
+<h3>100%</h3>
+<p>Quality Control</p>
+</div>
+<div>
+<h3>Global</h3>
+<p>Export Vision</p>
+</div>
+</div>
+
+</section>
+
+<footer>
+© 2026 Paramount Meat Corporation | Moradabad, India
+</footer>
+
 </body>
 </html>
