@@ -6,12 +6,12 @@
 <title>Paramount Meat Corporation | Moradabad</title>
 
 <style>
-
 :root{
---primary:#7a0000;
+--primary:#8b0000;
+--secondary:#b22222;
+--accent:#d4af37;
 --dark:#111;
 --light:#f4f4f4;
---accent:#d4af37;
 }
 
 *{
@@ -26,10 +26,34 @@ scroll-behavior:smooth;
 }
 
 body{
-background:var(--dark);
+background:linear-gradient(135deg,#1a0000,#300000);
 color:white;
-line-height:1.6;
 overflow-x:hidden;
+}
+
+/* TOP BAR */
+.topbar{
+background:#000;
+color:#ccc;
+display:flex;
+justify-content:space-between;
+padding:8px 60px;
+font-size:14px;
+}
+
+.topbar a{
+color:#ccc;
+text-decoration:none;
+margin-right:15px;
+transition:0.3s;
+}
+
+.topbar a:hover{
+color:var(--accent);
+}
+
+.email{
+color:var(--accent);
 }
 
 /* NAVBAR */
@@ -38,15 +62,16 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:20px 60px;
-position:fixed;
-width:100%;
-background:rgba(0,0,0,0.85);
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(8px);
+position:sticky;
+top:0;
 z-index:1000;
 }
 
 nav h2{
 color:var(--accent);
-letter-spacing:1px;
+font-weight:600;
 }
 
 nav ul{
@@ -59,8 +84,8 @@ margin-left:25px;
 }
 
 nav ul li a{
-text-decoration:none;
 color:white;
+text-decoration:none;
 font-weight:500;
 transition:0.3s;
 }
@@ -69,39 +94,35 @@ nav ul li a:hover{
 color:var(--accent);
 }
 
-/* HERO SECTION */
+/* HERO */
 .hero{
 height:100vh;
 background:url("https://images.unsplash.com/photo-1604908177522-4299c3bfe6e1") center/cover no-repeat;
 display:flex;
-flex-direction:column;
-justify-content:center;
 align-items:center;
+justify-content:center;
 text-align:center;
-padding:20px;
 position:relative;
 }
 
 .hero::after{
 content:"";
 position:absolute;
-top:0;
-left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.6);
+background:linear-gradient(rgba(0,0,0,0.7),rgba(139,0,0,0.7));
 }
 
 .hero-content{
 position:relative;
 z-index:1;
-animation:fadeIn 2s ease-in-out;
+animation:fadeIn 2s ease;
 }
 
 .hero h1{
-font-size:55px;
+font-size:60px;
 color:var(--accent);
-margin-bottom:15px;
+margin-bottom:20px;
 }
 
 .hero p{
@@ -112,14 +133,14 @@ margin-bottom:30px;
 }
 
 .btn{
-padding:14px 28px;
+padding:14px 30px;
 background:var(--primary);
 color:white;
 text-decoration:none;
-border-radius:4px;
+border-radius:30px;
 margin:10px;
 transition:0.3s;
-display:inline-block;
+font-weight:600;
 }
 
 .btn:hover{
@@ -127,19 +148,18 @@ background:var(--accent);
 color:black;
 }
 
-/* SECTION */
+/* ABOUT SECTION */
 section{
 padding:80px 60px;
 }
 
 .title{
 text-align:center;
+font-size:36px;
 color:var(--accent);
 margin-bottom:40px;
-font-size:32px;
 }
 
-/* ABOUT */
 .about{
 max-width:1000px;
 margin:auto;
@@ -148,34 +168,21 @@ font-size:18px;
 animation:fadeUp 2s ease;
 }
 
-/* FACTORY SECTION */
-.factory{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
-align-items:center;
-}
-
-.factory img{
-width:100%;
-border-radius:8px;
-}
-
-.factory-text{
-font-size:18px;
-}
-
 /* STATS */
 .stats{
 display:flex;
 justify-content:space-around;
+margin-top:60px;
 text-align:center;
-margin-top:50px;
 }
 
-.stats div h3{
+.stats h3{
 font-size:40px;
 color:var(--accent);
+}
+
+.stats p{
+color:#ddd;
 }
 
 /* FOOTER */
@@ -186,7 +193,7 @@ padding:20px;
 color:#aaa;
 }
 
-/* ANIMATIONS */
+/* ANIMATION */
 @keyframes fadeIn{
 from{opacity:0;transform:translateY(-30px);}
 to{opacity:1;transform:translateY(0);}
@@ -199,6 +206,12 @@ to{opacity:1;transform:translateY(0);}
 
 /* MOBILE */
 @media(max-width:768px){
+
+.topbar{
+flex-direction:column;
+text-align:center;
+padding:10px;
+}
 
 nav{
 flex-direction:column;
@@ -218,22 +231,30 @@ section{
 padding:60px 20px;
 }
 
-.factory{
-grid-template-columns:1fr;
-}
-
 .stats{
 flex-direction:column;
 gap:20px;
 }
 
 }
-
 </style>
 </head>
 
 <body>
 
+<!-- TOP BAR -->
+<div class="topbar">
+<div>
+<a href="https://youtube.com" target="_blank">YouTube</a>
+<a href="https://twitter.com" target="_blank">X</a>
+<a href="https://facebook.com" target="_blank">Facebook</a>
+</div>
+<div class="email">
+Email: info@paramountmeat.com
+</div>
+</div>
+
+<!-- NAVBAR -->
 <nav>
 <h2>Paramount Meat Corp.</h2>
 <ul>
@@ -247,13 +268,14 @@ gap:20px;
 <!-- HERO -->
 <div class="hero">
 <div class="hero-content">
-<h1>Premium Quality Meat Processing & Export</h1>
+<h1>Premium Meat Processing & Export</h1>
 <p>
-Established in 2025 in Moradabad, Paramount Meat Corporation is committed to delivering hygienic,
-high-quality processed meat products that meet international food safety standards.
+Founded in 2025 in Moradabad, Paramount Meat Corporation delivers
+high-quality, hygienic and internationally compliant meat products
+for domestic and global markets.
 </p>
-<a href="contact.html" class="btn">Get In Touch</a>
-<a href="products.html" class="btn">View Products</a>
+<a href="contact.html" class="btn">Contact Us</a>
+<a href="products.html" class="btn">Our Products</a>
 </div>
 </div>
 
@@ -261,40 +283,23 @@ high-quality processed meat products that meet international food safety standar
 <section>
 <h2 class="title">About Paramount Meat Corporation</h2>
 <div class="about">
-Founded in 2025, Paramount Meat Corporation is a modern meat processing company
-located in Moradabad, India. Our facility is designed with advanced hygienic
-processing systems, cold storage infrastructure, and strict quality control standards.
+Paramount Meat Corporation was established in 2025 with a vision
+to build a globally trusted meat export brand from Moradabad, India.
 <br><br>
-We are committed to providing safe, fresh and premium meat products to domestic
-and international markets. Our vision is to become a globally trusted meat
-export brand through integrity, quality and excellence.
-</div>
-</section>
-
-<!-- FACTORY -->
-<section>
-<h2 class="title">Our Modern Processing Facility</h2>
-
-<div class="factory">
-<img src="https://images.unsplash.com/photo-1588167056547-c183313da47e">
-<div class="factory-text">
-Our Moradabad-based factory follows strict hygiene and international food safety
-standards. Equipped with modern machinery and cold chain systems, we ensure
-freshness, quality and compliance with export regulations.
-<br><br>
-We maintain complete traceability, quality checks and professional packaging
-to guarantee customer satisfaction worldwide.
-</div>
+Our modern processing facility follows strict hygiene standards,
+advanced cold-chain systems, and complete quality control measures.
+We are committed to delivering freshness, safety, and excellence
+to our customers worldwide.
 </div>
 
 <div class="stats">
 <div>
 <h3>2025</h3>
-<p>Founded</p>
+<p>Established</p>
 </div>
 <div>
-<h3>100%</h3>
-<p>Quality Control</p>
+<h3>Moradabad</h3>
+<p>Factory Location</p>
 </div>
 <div>
 <h3>Global</h3>
