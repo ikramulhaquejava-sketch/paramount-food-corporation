@@ -3,38 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Paramount Meat Corporation | Premium Meat Export</title>
+<title>Paramount Meat Corporation | Premium Export</title>
 
-<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-
-<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-
 :root{
 --primary:#5b0000;
---gradient:linear-gradient(135deg,#5b0000,#2a0000);
 --accent:#d4af37;
 --dark:#0f0f0f;
---text-light:#f8f8f8;
 }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
 font-family:'Poppins',sans-serif;
-background:var(--gradient);
-color:var(--text-light);
+background:linear-gradient(135deg,#3a0000,#140000);
+color:#fff;
 overflow-x:hidden;
 }
 
-/* TOP BAR */
+/* TOPBAR */
 .topbar{
 background:#000;
 display:flex;
@@ -43,21 +33,9 @@ padding:8px 80px;
 font-size:14px;
 }
 
-.topbar a{
-color:#bbb;
-margin-right:18px;
-text-decoration:none;
-transition:0.3s;
-}
-
-.topbar a:hover{
-color:var(--accent);
-}
-
-.topbar .email{
-color:var(--accent);
-font-weight:500;
-}
+.topbar a{color:#bbb;margin-right:15px;text-decoration:none;}
+.topbar a:hover{color:var(--accent);}
+.email{color:var(--accent);}
 
 /* NAVBAR */
 nav{
@@ -65,7 +43,7 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:20px 80px;
-background:rgba(0,0,0,0.6);
+background:rgba(0,0,0,0.7);
 backdrop-filter:blur(10px);
 position:sticky;
 top:0;
@@ -75,28 +53,15 @@ z-index:1000;
 nav h2{
 font-family:'Playfair Display',serif;
 color:var(--accent);
-letter-spacing:1px;
 }
 
-nav ul{
-display:flex;
-list-style:none;
-}
-
-nav ul li{
-margin-left:30px;
-}
-
+nav ul{display:flex;list-style:none;}
+nav ul li{margin-left:30px;}
 nav ul li a{
-color:white;
-text-decoration:none;
+color:white;text-decoration:none;
 transition:0.3s;
-font-weight:500;
 }
-
-nav ul li a:hover{
-color:var(--accent);
-}
+nav ul li a:hover{color:var(--accent);}
 
 /* HERO */
 .hero{
@@ -120,7 +85,7 @@ background:rgba(0,0,0,0.75);
 .hero-content{
 position:relative;
 z-index:1;
-animation:fadeUp 1.8s ease;
+animation:fadeUp 1.5s ease;
 }
 
 .hero h1{
@@ -134,19 +99,18 @@ margin-bottom:20px;
 font-size:20px;
 max-width:750px;
 margin:auto;
-margin-bottom:35px;
+margin-bottom:30px;
 }
 
 .btn{
 padding:14px 35px;
 background:var(--accent);
 color:black;
-text-decoration:none;
 border-radius:50px;
+text-decoration:none;
 font-weight:600;
-transition:0.4s;
+transition:0.3s;
 }
-
 .btn:hover{
 background:white;
 transform:translateY(-3px);
@@ -169,20 +133,66 @@ margin-bottom:50px;
 max-width:1000px;
 margin:auto;
 text-align:center;
-font-size:18px;
 line-height:1.8;
 }
 
-.highlight{
+/* CERTIFICATES SECTION */
+.certificates{
+background:url("https://images.unsplash.com/photo-1581091215367-59ab6b7b8f2d") center/cover no-repeat fixed;
+position:relative;
+}
+
+.certificates::before{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.8);
+top:0;
+left:0;
+}
+
+.cert-container{
+position:relative;
+z-index:1;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.cert-card{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(8px);
+padding:25px;
+border-radius:10px;
+text-align:center;
+transition:0.4s;
+}
+
+.cert-card img{
+width:100%;
+height:180px;
+object-fit:contain;
+background:#fff;
+border-radius:8px;
+padding:10px;
+}
+
+.cert-card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 25px rgba(212,175,55,0.5);
+}
+
+.cert-card h3{
+margin-top:15px;
 color:var(--accent);
-font-weight:600;
 }
 
 /* STATS */
 .stats{
 display:flex;
 justify-content:space-around;
-margin-top:70px;
+margin-top:60px;
 text-align:center;
 }
 
@@ -190,10 +200,6 @@ text-align:center;
 font-size:48px;
 color:var(--accent);
 font-family:'Playfair Display',serif;
-}
-
-.stats p{
-color:#ddd;
 }
 
 /* FOOTER */
@@ -212,31 +218,11 @@ to{opacity:1;transform:translateY(0);}
 
 /* MOBILE */
 @media(max-width:768px){
-
-.topbar,nav{
-flex-direction:column;
-padding:20px;
-text-align:center;
-}
-
-nav ul{
-flex-direction:column;
-margin-top:15px;
-}
-
-.hero h1{
-font-size:32px;
-}
-
-section{
-padding:70px 25px;
-}
-
-.stats{
-flex-direction:column;
-gap:30px;
-}
-
+.topbar,nav{flex-direction:column;padding:20px;text-align:center;}
+nav ul{flex-direction:column;margin-top:15px;}
+.hero h1{font-size:32px;}
+section{padding:70px 25px;}
+.stats{flex-direction:column;gap:30px;}
 }
 </style>
 </head>
@@ -268,22 +254,50 @@ gap:30px;
 <div class="hero-content">
 <h1>Premium Meat Processing & Export</h1>
 <p>
-Established in <span class="highlight">2025</span> in <span class="highlight">Moradabad</span>, Paramount Meat Corporation delivers hygienic, high-quality and internationally compliant meat products with a strong global export vision.
+Established in 2025 in Moradabad, Paramount Meat Corporation delivers
+international quality meat products with strict hygiene and compliance standards.
 </p>
 <a href="#" class="btn">Explore Our Products</a>
 </div>
 </div>
 
 <section>
-<h2 class="title">About Paramount Meat Corporation</h2>
+<h2 class="title">About Our Factory</h2>
 <div class="about">
-Paramount Meat Corporation was founded with a bold vision to build a globally trusted meat export brand from Moradabad, India.
-<br><br>
-Our state-of-the-art processing facility ensures strict hygiene protocols, advanced cold-chain infrastructure, and uncompromising quality control systems.
-<br><br>
-We are committed to delivering freshness, safety, integrity and excellence — creating long-term partnerships across international markets.
+Located in Moradabad, our modern meat processing facility operates under
+strict hygiene protocols and advanced cold-chain systems.
+We are committed to quality, safety, and global export excellence.
+</div>
+</section>
+
+<section class="certificates">
+<h2 class="title">Certifications & Licenses</h2>
+<div class="cert-container">
+
+<div class="cert-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/ISO_9001-2015.svg">
+<h3>ISO 9001 Certified</h3>
 </div>
 
+<div class="cert-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Halal_logo.svg">
+<h3>Halal Certified</h3>
+</div>
+
+<div class="cert-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/74/FSSAI_logo.svg">
+<h3>FSSAI Licensed</h3>
+</div>
+
+<div class="cert-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Export-Logo.png">
+<h3>Export Approved</h3>
+</div>
+
+</div>
+</section>
+
+<section>
 <div class="stats">
 <div>
 <h3>2025</h3>
@@ -298,7 +312,6 @@ We are committed to delivering freshness, safety, integrity and excellence — c
 <p>Export Vision</p>
 </div>
 </div>
-
 </section>
 
 <footer>
