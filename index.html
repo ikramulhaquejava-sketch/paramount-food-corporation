@@ -5,31 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Paramount Meat Corporation | Premium Export</title>
 
-<!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-
-<!-- Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-
 :root{
+--primary:#5b0000;
 --accent:#d4af37;
 --dark:#0f0f0f;
---primary:#5b0000;
 }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
 font-family:'Poppins',sans-serif;
-background:#140000;
-color:white;
+background:linear-gradient(135deg,#3a0000,#140000);
+color:#fff;
 overflow-x:hidden;
 }
 
@@ -38,135 +29,76 @@ overflow-x:hidden;
 background:#000;
 display:flex;
 justify-content:space-between;
-padding:8px 60px;
+padding:8px 80px;
 font-size:14px;
 }
 
-.topbar a{
-color:#bbb;
-margin-right:15px;
-text-decoration:none;
-transition:0.3s;
-}
-
-.topbar a:hover{
-color:var(--accent);
-}
-
-.email{
-color:var(--accent);
-}
+.topbar a{color:#bbb;margin-right:15px;text-decoration:none;}
+.topbar a:hover{color:var(--accent);}
+.email{color:var(--accent);}
 
 /* NAVBAR */
 nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 60px;
-background:rgba(0,0,0,0.6);
+padding:20px 80px;
+background:rgba(0,0,0,0.7);
 backdrop-filter:blur(10px);
-position:fixed;
-width:100%;
+position:sticky;
+top:0;
 z-index:1000;
 }
 
-.logo a{
+nav h2{
 font-family:'Playfair Display',serif;
-font-size:24px;
 color:var(--accent);
-text-decoration:none;
-transition:0.3s;
 }
 
-.logo a:hover{
-color:white;
-}
-
-nav ul{
-display:flex;
-list-style:none;
-}
-
-nav ul li{
-margin-left:25px;
-}
-
+nav ul{display:flex;list-style:none;}
+nav ul li{margin-left:30px;}
 nav ul li a{
-color:white;
-text-decoration:none;
+color:white;text-decoration:none;
 transition:0.3s;
 }
+nav ul li a:hover{color:var(--accent);}
 
-nav ul li a:hover{
-color:var(--accent);
-}
-
-/* HERO WITH SLIDER */
+/* HERO */
 .hero{
-position:relative;
 height:100vh;
+background:url("https://images.unsplash.com/photo-1604908177522-4299c3bfe6e1") center/cover no-repeat fixed;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-overflow:hidden;
+position:relative;
 }
 
-.hero-slide{
-position:absolute;
-width:100%;
-height:100%;
-background-size:cover;
-background-position:center;
-animation:slide 18s infinite;
-}
-
-.hero-slide:nth-child(1){
-background-image:url("https://images.unsplash.com/photo-1604908177522-4299c3bfe6e1");
-animation-delay:0s;
-}
-.hero-slide:nth-child(2){
-background-image:url("https://images.unsplash.com/photo-1588167056547-c183313da47e");
-animation-delay:6s;
-}
-.hero-slide:nth-child(3){
-background-image:url("https://images.unsplash.com/photo-1606788075761-83865001e31c");
-animation-delay:12s;
-}
-
-@keyframes slide{
-0%{opacity:0;transform:scale(1);}
-10%{opacity:1;}
-30%{opacity:1;transform:scale(1.05);}
-40%{opacity:0;}
-100%{opacity:0;}
-}
-
-.hero-overlay{
+.hero::after{
+content:"";
 position:absolute;
 width:100%;
 height:100%;
 background:rgba(0,0,0,0.75);
-z-index:1;
 }
 
 .hero-content{
 position:relative;
-z-index:2;
-max-width:800px;
+z-index:1;
 animation:fadeUp 1.5s ease;
 }
 
 .hero h1{
 font-family:'Playfair Display',serif;
-font-size:60px;
+font-size:65px;
 color:var(--accent);
 margin-bottom:20px;
-text-shadow:0 0 25px rgba(212,175,55,0.7);
 }
 
 .hero p{
 font-size:20px;
+max-width:750px;
+margin:auto;
 margin-bottom:30px;
 }
 
@@ -179,68 +111,76 @@ text-decoration:none;
 font-weight:600;
 transition:0.3s;
 }
-
 .btn:hover{
 background:white;
 transform:translateY(-3px);
 }
 
-@keyframes fadeUp{
-from{opacity:0;transform:translateY(40px);}
-to{opacity:1;transform:translateY(0);}
-}
-
 /* SECTION */
 section{
-padding:100px 60px;
+padding:100px 80px;
 }
 
 .title{
 text-align:center;
 font-family:'Playfair Display',serif;
-font-size:38px;
+font-size:40px;
 color:var(--accent);
-margin-bottom:40px;
+margin-bottom:50px;
 }
 
 .about{
-max-width:900px;
+max-width:1000px;
 margin:auto;
 text-align:center;
 line-height:1.8;
 }
 
-/* CERTIFICATES */
+/* CERTIFICATES SECTION */
 .certificates{
-background:#1a0000;
+background:url("https://images.unsplash.com/photo-1581091215367-59ab6b7b8f2d") center/cover no-repeat fixed;
+position:relative;
+}
+
+.certificates::before{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.8);
+top:0;
+left:0;
 }
 
 .cert-container{
+position:relative;
+z-index:1;
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
 }
 
 .cert-card{
 background:rgba(255,255,255,0.05);
-padding:20px;
-border-radius:8px;
+backdrop-filter:blur(8px);
+padding:25px;
+border-radius:10px;
 text-align:center;
-transition:0.3s;
+transition:0.4s;
 }
 
 .cert-card img{
 width:100%;
-height:150px;
+height:180px;
 object-fit:contain;
-background:white;
-border-radius:6px;
+background:#fff;
+border-radius:8px;
 padding:10px;
 }
 
 .cert-card:hover{
 transform:translateY(-8px);
-box-shadow:0 0 20px rgba(212,175,55,0.6);
+box-shadow:0 0 25px rgba(212,175,55,0.5);
 }
 
 .cert-card h3{
@@ -248,32 +188,42 @@ margin-top:15px;
 color:var(--accent);
 }
 
+/* STATS */
+.stats{
+display:flex;
+justify-content:space-around;
+margin-top:60px;
+text-align:center;
+}
+
+.stats h3{
+font-size:48px;
+color:var(--accent);
+font-family:'Playfair Display',serif;
+}
+
 /* FOOTER */
 footer{
 background:#000;
 text-align:center;
-padding:20px;
+padding:25px;
 color:#aaa;
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(40px);}
+to{opacity:1;transform:translateY(0);}
 }
 
 /* MOBILE */
 @media(max-width:768px){
-.topbar,nav{
-flex-direction:column;
-text-align:center;
+.topbar,nav{flex-direction:column;padding:20px;text-align:center;}
+nav ul{flex-direction:column;margin-top:15px;}
+.hero h1{font-size:32px;}
+section{padding:70px 25px;}
+.stats{flex-direction:column;gap:30px;}
 }
-nav ul{
-flex-direction:column;
-margin-top:10px;
-}
-.hero h1{
-font-size:32px;
-}
-section{
-padding:70px 25px;
-}
-}
-
 </style>
 </head>
 
@@ -291,44 +241,36 @@ padding:70px 25px;
 </div>
 
 <nav>
-<div class="logo">
-<a href="#home">Paramount Meat Corporation</a>
-</div>
+<h2>Paramount Meat Corporation</h2>
 <ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#cert">Certificates</a></li>
-<li><a href="#contact">Contact</a></li>
+<li><a href="#">Home</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Products</a></li>
+<li><a href="#">Contact</a></li>
 </ul>
 </nav>
 
-<!-- HERO -->
-<div class="hero" id="home">
-<div class="hero-slide"></div>
-<div class="hero-slide"></div>
-<div class="hero-slide"></div>
-<div class="hero-overlay"></div>
-
+<div class="hero">
 <div class="hero-content">
 <h1>Premium Meat Processing & Export</h1>
 <p>
-Established in 2025 in Moradabad, Paramount Meat Corporation delivers international-quality meat products with strict hygiene and global compliance standards.
+Established in 2025 in Moradabad, Paramount Meat Corporation delivers
+international quality meat products with strict hygiene and compliance standards.
 </p>
-<a href="#about" class="btn">Learn More</a>
+<a href="#" class="btn">Explore Our Products</a>
 </div>
 </div>
 
-<!-- ABOUT -->
-<section id="about">
+<section>
 <h2 class="title">About Our Factory</h2>
 <div class="about">
-Located in Moradabad, our modern processing facility follows strict hygiene protocols and advanced cold-chain systems.
+Located in Moradabad, our modern meat processing facility operates under
+strict hygiene protocols and advanced cold-chain systems.
 We are committed to quality, safety, and global export excellence.
 </div>
 </section>
 
-<!-- CERTIFICATES -->
-<section class="certificates" id="cert">
+<section class="certificates">
 <h2 class="title">Certifications & Licenses</h2>
 <div class="cert-container">
 
@@ -347,10 +289,32 @@ We are committed to quality, safety, and global export excellence.
 <h3>FSSAI Licensed</h3>
 </div>
 
+<div class="cert-card">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Export-Logo.png">
+<h3>Export Approved</h3>
+</div>
+
 </div>
 </section>
 
-<footer id="contact">
+<section>
+<div class="stats">
+<div>
+<h3>2025</h3>
+<p>Established</p>
+</div>
+<div>
+<h3>Moradabad</h3>
+<p>Factory Location</p>
+</div>
+<div>
+<h3>Global</h3>
+<p>Export Vision</p>
+</div>
+</div>
+</section>
+
+<footer>
 © 2026 Paramount Meat Corporation | Moradabad, India
 </footer>
 
