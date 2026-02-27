@@ -15,13 +15,44 @@
 --dark:#0f0f0f;
 }
 
-*{margin:0;padding:0;box-sizing:border-box;}
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
 
+/* 🔥 Animated Meat Gradient Background */
 body{
 font-family:'Poppins',sans-serif;
-background:linear-gradient(135deg,#3a0000,#140000);
 color:#fff;
 overflow-x:hidden;
+background:linear-gradient(-45deg,#2b0000,#5b0000,#1a0000,#3a0000);
+background-size:400% 400%;
+animation:meatGradient 15s ease infinite;
+position:relative;
+}
+
+/* Moving gradient */
+@keyframes meatGradient{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* Scratch Texture Overlay */
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+opacity:0.25;
+animation:moveTexture 40s linear infinite;
+pointer-events:none;
+z-index:-1;
+}
+
+@keyframes moveTexture{
+from{background-position:0 0;}
+to{background-position:1000px 1000px;}
 }
 
 /* TOPBAR */
@@ -53,6 +84,11 @@ z-index:1000;
 nav h2{
 font-family:'Playfair Display',serif;
 color:var(--accent);
+transition:0.3s;
+}
+
+nav h2:hover{
+color:white;
 }
 
 nav ul{display:flex;list-style:none;}
@@ -72,14 +108,22 @@ align-items:center;
 justify-content:center;
 text-align:center;
 position:relative;
+overflow:hidden;
 }
 
+/* Animated overlay pulse */
 .hero::after{
 content:"";
 position:absolute;
 width:100%;
 height:100%;
 background:rgba(0,0,0,0.75);
+animation:pulseOverlay 6s ease-in-out infinite alternate;
+}
+
+@keyframes pulseOverlay{
+from{background:rgba(0,0,0,0.75);}
+to{background:rgba(80,0,0,0.85);}
 }
 
 .hero-content{
@@ -88,11 +132,18 @@ z-index:1;
 animation:fadeUp 1.5s ease;
 }
 
+/* Gold Glow Animation */
 .hero h1{
 font-family:'Playfair Display',serif;
 font-size:65px;
 color:var(--accent);
 margin-bottom:20px;
+animation:goldGlow 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes goldGlow{
+from{text-shadow:0 0 10px rgba(212,175,55,0.4);}
+to{text-shadow:0 0 35px rgba(212,175,55,0.8);}
 }
 
 .hero p{
@@ -147,7 +198,7 @@ content:"";
 position:absolute;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.8);
+background:rgba(0,0,0,0.85);
 top:0;
 left:0;
 }
@@ -180,7 +231,7 @@ padding:10px;
 
 .cert-card:hover{
 transform:translateY(-8px);
-box-shadow:0 0 25px rgba(212,175,55,0.5);
+box-shadow:0 0 25px rgba(212,175,55,0.6);
 }
 
 .cert-card h3{
